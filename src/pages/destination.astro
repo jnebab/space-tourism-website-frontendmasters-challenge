@@ -1,0 +1,15 @@
+---
+import Header from "../components/Header";
+import Destination from "../components/Destination";
+import Layout from "../layouts/Layout.astro";
+import "../styles/main.css";
+
+const { pathname } = Astro.canonicalURL;
+---
+
+<Layout title="Destination">
+  <main class="w-full bg-dark bg-d-mobile md:bg-d-tablet lg:bg-d-desktop bg-cover pb-14 min-h-screen">
+    <Header client:load pathname={pathname} />
+    <Destination client:load />
+  </main>
+</Layout>

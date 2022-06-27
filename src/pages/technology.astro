@@ -1,0 +1,15 @@
+---
+import Header from '../components/Header';
+import Technology from '../components/Technology';
+import Layout from '../layouts/Layout.astro';
+import '../styles/main.css'
+
+const { pathname } = Astro.canonicalURL;
+---
+
+<Layout title="Technology">
+    <main class="w-full bg-sl-mobile bg-opacity-90 md:bg-sl-tablet lg:bg-sl-desktop bg-cover min-h-screen">
+        <Header client:load pathname={pathname} />
+        <Technology client:load />
+    </main>
+</Layout>
